@@ -1,0 +1,914 @@
+* {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+}
+header {
+    padding: 10px 30px;
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+    backdrop-filter: blur(30px); /* Apply blur effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add subtle shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: 2px;
+
+}
+
+.home_links li a {
+    text-decoration: none;
+    color: black;
+}
+
+.home_links li a:hover {
+    text-decoration: none;
+    color: green;
+}
+
+nav button {
+    border: none;
+    padding: 10px 10px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    background: rgba(140, 137, 137, 0.3); /* Semi-transparent white background */
+    /* backdrop-filter: blur(30px); Apply blur effect */
+}
+
+nav button:hover {
+    border: none;
+    background-color:rgba(149, 186, 177, 0.541);
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+}
+
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+    nav {
+        padding: 0 30px;
+        /* Increased padding for larger screens */
+    }
+
+    h1 {
+        font-size: 28px;
+        /* Larger font size for desktop */
+    }
+
+    nav li {
+        font-size: 20px;
+        /* Larger font size for desktop */
+        margin: 0 20px;
+    }
+
+    nav button {
+        padding: 10px 20px;
+        /* Larger padding for buttons */
+        font-size: 18px;
+        /* Larger font size for buttons */
+    }
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    nav {
+        padding: 0 25px;
+        /* Slightly smaller padding */
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    nav li {
+        font-size: 18px;
+        margin: 0 15px;
+    }
+
+    nav button {
+        padding: 9px 18px;
+        font-size: 17px;
+    }
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    nav {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    nav li {
+
+        font-size: 18px;
+        margin: 10px 20px;
+    }
+
+    nav div {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    nav button {
+        width: 100%;
+        text-align: left;
+        margin: 10px 0;
+        padding: 8px 15px;
+    }
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    nav {
+        padding: 0 20px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    nav li {
+        font-size: 18px;
+    }
+
+    nav div {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    nav button {
+        width: auto;
+        margin-left: 10px;
+    }
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+    nav {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    nav li {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    nav div {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    nav button {
+        width: 100%;
+        text-align: left;
+        margin: 10px 0;
+        padding: 8px 15px;
+    }
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    nav li {
+        font-size: 16px;
+        margin: 8px 0;
+    }
+
+    nav div {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    nav button {
+        width: 100%;
+        text-align: left;
+        margin: 8px 0;
+        padding: 7px 10px;
+    }
+}
+
+#hero_img {
+    background-image: url(./assets/main.png.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 500px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px 20px;
+    color: white;
+}
+
+#hero_img_content {
+    margin-top: 200px;
+}
+
+#btn_div {
+    display: flex;
+    justify-content: center;
+}
+
+.all_btns {
+    padding: 9px 15px;
+    margin: 60px 10px;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.all_btns:hover {
+    padding: 9px 15px;
+    margin: 60px 10px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+    .hero_img {
+        height: 600px;
+        /* Increase height for larger screens */
+    }
+}
+
+/* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .hero_img {
+        height: 500px;
+        /* Maintain height for this range */
+    }
+}
+
+/* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hero_img {
+        height: 400px;
+        margin: 5px 10px;
+        /* Adjust margin for smaller screens */
+    }
+
+    #hero_img_content {
+        margin-top: 150px;
+        /* Adjust content position */
+    }
+
+    .all_btns {
+        padding: 8px 15px;
+        /* Slightly reduce button size */
+        margin: 40px 8px;
+    }
+}
+
+/* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .hero_img {
+        height: 350px;
+    }
+
+    #hero_img_content {
+        margin-top: 120px;
+    }
+
+    .all_btns {
+        padding: 8px 15px;
+        margin: 30px 8px;
+    }
+}
+
+/* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .hero_img {
+        height: 300px;
+    }
+
+    #hero_img_content {
+        margin-top: 100px;
+    }
+
+    .all_btns {
+        padding: 8px 15px;
+        margin: 30px 5px;
+    }
+}
+
+/* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .hero_img {
+        height: 250px;
+        margin: 5px;
+        border-radius: 5px;
+    }
+
+    #hero_img_content {
+        margin-top: 80px;
+    }
+
+    .all_btns {
+        padding: 7px 10px;
+        margin: 20px 5px;
+        font-size: 14px;
+    }
+}
+
+
+#product_container {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    width: 400px;
+    border-radius: 5px;
+    border: 1px solid;
+    margin: 1rem;
+    object-fit: cover;
+    padding: 10px 15px;
+
+}
+
+.product-card img {
+    height: 230px;
+    width: 230px;
+
+}
+
+.product-card img:hover {
+    transition: 1s;
+    scale: 1.1;
+}
+
+.product-card h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.product-card p {
+    margin: 5px 0;
+}
+
+.product-card hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 5px 0;
+    width: 395px;
+}
+
+.button-container button {
+    background-color: #0f0f10;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin: 5px;
+}
+
+/* cart page css */
+
+#cartdiv {
+    margin-left: 80px;
+    height: 300px;
+    width: 1330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(234, 235, 237);
+    text-align: center;
+    border-radius: 10px;
+}
+
+#cartpara {
+    margin-bottom: 10px;
+    font-size: xx-large;
+}
+
+#cartdiv button {
+    height: 40px;
+    width: 150px;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#cartdiv button:hover {
+    background-color: black;
+    color: azure;
+}
+
+/* cart styling ends */
+
+/* Container layout to place the cart and summary side by side */
+#cartItemsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+
+#carteditems {
+    flex: 2;
+    /* Takes up more space */
+}
+
+#ordereddescription {
+    flex: 1;
+    /* Takes up less space */
+}
+
+/* Table styling */
+.cart-table {
+    width: 1000px;
+    border-collapse: collapse;
+    border-radius: 10px;
+    margin: 0 20px;
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.cart-table th {
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.product-image {
+    width: 100px;
+    height: auto;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-control span {
+    padding: 0 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Styling for the order summary */
+.order-details {
+    border: 1px solid #000;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    width: 400px;
+}
+
+.order-details h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.order-details table {
+    width: 100%;
+    height: 150px;
+}
+
+.order-details .spn {
+    float: right;
+}
+
+.order-details b {
+    font-size: 18px;
+}
+
+.order-details p {
+    float: right;
+}
+
+/* checkout button */
+.checkout-btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.checkout-btn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    height: 50px;
+    width: 350px;
+    border-radius: 5px;
+}
+
+.checkout-btn:hover {
+    background-color: black;
+}
+
+@media (max-width: 768px) {
+    #cartItemsContainer {
+        flex-direction: column;
+    }
+
+    #carteditems,
+    #ordereddescription {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* checkout button ends */
+
+
+/* about page css */
+
+.about-section {
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 40px;
+}
+
+.about-section h1,
+.about-section h2 {
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 10px;
+}
+
+.about-section p {
+    font-size: 20px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.images-grid {
+    display: grid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.image-container {
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    height: 300px;
+    width: 100%;
+    text-align: center;
+    margin: 10px 40px;
+    transition: transform 0.3s ease;
+}
+
+.image-container img {
+    height: 250px;
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container:hover {
+    transform: scale(1.05);
+}
+
+.image-container img:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-container p {
+    margin-top: 10px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.image-container p:hover {
+    margin-top: 10px;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 2px;
+    color: rgb(128, 0, 70);
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+
+/* Made with ❤️section css */
+#footer {
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+}
+
+
+/* contact section css */
+.contact-section {
+    background-color: white;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contact-section h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#contact-form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+#contact-form button {
+    margin-left: 260px;
+    width: 70px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+    background-color: #555;
+}
+
+/* login form css */
+
+/* Container for the Form */
+.loginform-container {
+    margin-left: 600px;
+    margin-top: 200px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 350px;
+}
+
+/* Form Heading Styles */
+.loginform-container h2 {
+    margin-bottom: 20px;
+    color: #333333;
+    text-align: center;
+}
+
+/* Input Field Styles */
+.loginform-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Button Styles */
+.loginform-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+.loginform-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Paragraph and Link Styles */
+.loginform-container p {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.loginform-container p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.loginform-container p a:hover {
+    text-decoration: underline;
+}
+
+
+/* register form css */
+
+.form-container {
+    margin-left: 600px;
+    margin-top: 100px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 350px;
+    position: relative;
+    display: inline-block;
+}
+
+#password {
+    padding-right: 30px;
+    width: 100%;
+    padding: 10px;
+}
+
+.eye-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Form Heading Styles */
+.form-container h2 {
+    margin-bottom: 20px;
+    color: #333333;
+    text-align: center;
+}
+
+/* Input Field Styles */
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Button Styles */
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Paragraph and Link Styles */
+.form-container p {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-container p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-container p a:hover {
+    text-decoration: underline;
+}

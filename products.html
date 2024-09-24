@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>products page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Ecommerce</h1>
+
+            <div class="home_links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./products.html">Products</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </div>
+
+
+            <div>
+                <button><a href="./login.html" style="text-decoration: none; color: black;"><i
+                            class="fa-solid fa-right-to-bracket"></i> Login</a></button>
+                <button><a href="./register.html" style="text-decoration: none; color: black;"><i
+                            class="fa-solid fa-user-plus"></i> Register</a></button>
+                <button><a href="./cart.html" style="text-decoration: none; color:black;">
+                        <i class="fa-solid fa-cart-shopping"></i> Cart (<span id="cart-count">0</span>)</a></button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <center>
+            <h1 style="font-size: 60px;">Latest Products</h1>
+            <hr>
+        </center>
+        <div id="btn_div">
+            <button class="all_btns" onclick="filterproduct('all')">All</button>
+            <button class="all_btns" onclick="filterproduct('men\'s clothing')">Men's Clothing</button>
+            <button class="all_btns" onclick="filterproduct('women\'s clothing')">Women's Clothing</button>
+            <button class="all_btns" onclick="filterproduct('jewelery')">Jewelry</button>
+            <button class="all_btns" onclick="filterproduct('electronics')">Electronics</button>
+        </div>
+    </main>
+    <div id="product_container"></div>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
